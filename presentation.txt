@@ -1,0 +1,71 @@
+- Objectives
+
+  - Get an idea of what Ansible is
+
+  - Understand when you might want to use it
+
+  - Get some practical exposure
+
+  - Have fun
+
+- What is Ansible
+
+- Alternatives
+
+  - Cheff
+
+  - Vagrant
+
+  - Docker
+
+- Why Ansible
+
+- Disadvantages
+
+- Ansible components
+
+  - File format
+
+  - Playbooks
+
+  - Variables
+
+  - Hosts
+
+  - Roles
+
+  - Tasks
+
+  - Handlers
+
+
+  - Templates
+
+
+- Practical
+
+  - Clone https://github.com:bstrydo/intro-to-ansible.git
+
+  - Change direcotyr to intro-to-ansible
+
+  - copy the files in the ssh folder to ~/.ssh
+
+      cp ssh/intro_to_ansible* ~/.ssh
+
+  - Change the persmissions of the copied files to 600
+
+      chmod 600 ~/.ssh/intro_to_ansible*
+
+  - Provision the box
+
+       vagrant up
+
+  - Now provision your VM with something you can demo like a baby website
+
+    - you can use the snippets and the internet
+
+    - hints:
+      
+      - install apache
+
+      - use ansible to copy a static page to /var/www/html
