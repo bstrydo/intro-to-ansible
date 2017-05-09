@@ -9,6 +9,7 @@ Vagrant.configure("2") do |config|
     vb.memory = "512"
   end
 
+  config.vm.provision "file", source: "foobar", destination: "/home/ubuntu/foobar"
   config.vm.provision "file", source: "ssh/intro_to_ansible", destination: "/home/ubuntu/intro_to_ansible"
   config.vm.provision "file", source: "ssh/intro_to_ansible.pub", destination: "/home/ubuntu/intro_to_ansible.pub"
   config.vm.provision "shell", inline: "sudo cp /home/ubuntu/intro_to_ansible* /root/.ssh"
