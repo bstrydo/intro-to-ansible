@@ -1,0 +1,22 @@
+- hosts: all
+
+  vars:
+    my_var: 'something'
+
+  pre_tasks:
+    - debug: msg=pre_tasks
+
+    - name: common dependencies
+      apt: name={{ item }} state=latest
+      with_items:
+        - rsync
+        - unzip
+        - python-boto
+        - python-bz2file
+        - iptables
+
+  tasks:
+    - debug: msg=tasks
+
+  post_tasks:
+    - debug: msg=posttask
