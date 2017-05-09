@@ -1,0 +1,7 @@
+    - name: my block
+      blockinfile:
+        dest: "/home/ubuntu/foobar"
+        insertbefore: "^This marks the spot"
+        block: |
+            hello world, brett
+            is running around here
