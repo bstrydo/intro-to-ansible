@@ -1,0 +1,6 @@
+      lineinfile:
+        dest: <someFile>
+        regexp: '^#PasswordAuthentication no'
+        line: 'PasswordAuthentication no'
+        backrefs: true
+      notify: <someHandler>
