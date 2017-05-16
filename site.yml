@@ -6,6 +6,10 @@
   vars_files:
     - "snippets/vars/my_vars.yml"
 
+  handlers:
+    - name: my handler
+      debug: msg="running my handler"
+
   pre_tasks:
     - debug: msg=pre_tasks
     - debug: msg="my_var is {{my_var}}"
@@ -21,9 +25,15 @@
         - python-bz2file
         - iptables
 
+  roles:
+    - role: my_role
+      role_v2: "whatever you like"
+
   tasks:
       - name: blockinfile
         include: snippets/tasks/blockinfile.yml
+      - name: copy test file
+        include: snippets/tasks/copy_file.yml
 
   post_tasks:
     - debug: msg=posttask

@@ -1,4 +1,5 @@
-- name: <name>
+- name: copy file
   copy:
     dest: "/tmp/test"
     src: "test"
+  notify: my handler
