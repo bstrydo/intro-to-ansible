@@ -3,8 +3,14 @@
   vars:
     my_var: 'something'
 
+  vars_files:
+    - "snippets/vars/my_vars.yml"
+
   pre_tasks:
     - debug: msg=pre_tasks
+    - debug: msg="my_var is {{my_var}}"
+    - debug: msg="from file my_v1 is {{my_group_of_vars.my_v1}}"
+    - debug: msg="from file my_v2 is {{my_group_of_vars.my_v2}}"
 
     - name: common dependencies
       apt: name={{ item }} state=latest
@@ -16,7 +22,8 @@
         - iptables
 
   tasks:
-    - debug: msg=tasks
+      - name: blockinfile
+        include: snippets/tasks/blockinfile.yml
 
   post_tasks:
     - debug: msg=posttask
