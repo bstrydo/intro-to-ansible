@@ -1,0 +1,11 @@
+- name: my_role task1
+  debug: msg="role_v1 is {{role_v1}}"
+
+- name: my_role task2
+  debug: msg="role_v2 is {{role_v2}}"
+
+- name: template hello world
+  template:
+    dest: /tmp/helloworld.sh
+    src: helloworld.j2
+    mode: 0755
