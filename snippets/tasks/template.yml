@@ -1,0 +1,7 @@
+- name: template a file
+  template:
+    dest: /etc/caddy/Caddyfile
+    src: Caddyfile.j2
+    owner: <owner>
+    group: <group>
+    mode: <permissions(e.g. 755)>
