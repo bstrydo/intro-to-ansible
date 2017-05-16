@@ -1,0 +1,4 @@
+- name: <name>
+  copy:
+    dest: "/tmp/test"
+    src: "test"
